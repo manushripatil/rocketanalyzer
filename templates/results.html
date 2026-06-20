@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rocket Analysis Results</title>
+</head>
+<body>
+
+    <h1>🚀 Rocket Analysis Results</h1>
+
+    <h2>📊 Key Metrics</h2>
+    <ul>
+        <li>Max Altitude: {{ max_altitude }} m</li>
+        <li>Max Velocity: {{ max_velocity }} m/s</li>
+        <li>Max Acceleration: {{ max_acceleration }} m/s²</li>
+        <li>Total Flight Time: {{ flight_time }} s</li>
+        <li>Average Drag Coefficient (Cd): {{ avg_cd }}</li>
+    </ul>
+
+    <hr>
+
+    <h2>📈 Flight Graphs</h2>
+
+    <h3>Real vs Simulated Altitude</h3>
+    <img src="/static/sim_compare.png" width="600">
+
+    <h3>Velocity (Raw vs Smoothed)</h3>
+    <img src="/static/velocity.png" width="600">
+
+    <h3>Acceleration (Cleaned)</h3>
+    <img src="/static/acceleration.png" width="600">
+
+    <hr>
+
+    <h2>🧪 Flight Analysis Data</h2>
+    {{ table_html | safe }}
+
+    <hr>
+
+    <h2>⬇ Download Processed Data</h2>
+    <a href="/download/{{ filename }}">Download CSV</a>
+
+    <hr>
+
+    <a href="/">⬅ Upload Another Flight</a>
+
+</body>
+</html>
